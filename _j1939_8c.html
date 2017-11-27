@@ -1,0 +1,1544 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=9"/>
+<meta name="generator" content="Doxygen 1.8.13"/>
+<meta name="viewport" content="width=device-width, initial-scale=1"/>
+<title>J1939Socket: J1939.c 文件参考</title>
+<link href="tabs.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="jquery.js"></script>
+<script type="text/javascript" src="dynsections.js"></script>
+<link href="navtree.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="resize.js"></script>
+<script type="text/javascript" src="navtreedata.js"></script>
+<script type="text/javascript" src="navtree.js"></script>
+<script type="text/javascript">
+  $(document).ready(initResizable);
+</script>
+<link href="search/search.css" rel="stylesheet" type="text/css"/>
+<script type="text/javascript" src="search/searchdata.js"></script>
+<script type="text/javascript" src="search/search.js"></script>
+<link href="doxygen.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+<div id="top"><!-- do not remove this div, it is closed by doxygen! -->
+<div id="titlearea">
+<table cellspacing="0" cellpadding="0">
+ <tbody>
+ <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="QQ截图20171122084735.png"/></td>
+  <td id="projectalign" style="padding-left: 0.5em;">
+   <div id="projectname">J1939Socket
+   &#160;<span id="projectnumber">Version 2.00</span>
+   </div>
+   <div id="projectbrief">基于SAE J1939协议，开源可移植的J1939驱动</div>
+  </td>
+ </tr>
+ </tbody>
+</table>
+</div>
+<!-- end header part -->
+<!-- 制作者 Doxygen 1.8.13 -->
+<script type="text/javascript">
+var searchBox = new SearchBox("searchBox", "search",false,'搜索');
+</script>
+<script type="text/javascript" src="menudata.js"></script>
+<script type="text/javascript" src="menu.js"></script>
+<script type="text/javascript">
+$(function() {
+  initMenu('',true,false,'search.php','搜索');
+  $(document).ready(function() { init_search(); });
+});
+</script>
+<div id="main-nav"></div>
+</div><!-- top -->
+<div id="side-nav" class="ui-resizable side-nav-resizable">
+  <div id="nav-tree">
+    <div id="nav-tree-contents">
+      <div id="nav-sync" class="sync"></div>
+    </div>
+  </div>
+  <div id="splitbar" style="-moz-user-select:none;" 
+       class="ui-resizable-handle">
+  </div>
+</div>
+<script type="text/javascript">
+$(document).ready(function(){initNavTree('_j1939_8c.html','');});
+</script>
+<div id="doc-content">
+<!-- window showing the filter options -->
+<div id="MSearchSelectWindow"
+     onmouseover="return searchBox.OnSearchSelectShow()"
+     onmouseout="return searchBox.OnSearchSelectHide()"
+     onkeydown="return searchBox.OnSearchSelectKey(event)">
+</div>
+
+<!-- iframe showing the search results (closed by default) -->
+<div id="MSearchResultsWindow">
+<iframe src="javascript:void(0)" frameborder="0" 
+        name="MSearchResults" id="MSearchResults">
+</iframe>
+</div>
+
+<div class="header">
+  <div class="summary">
+<a href="#define-members">宏定义</a> &#124;
+<a href="#func-members">函数</a> &#124;
+<a href="#var-members">变量</a>  </div>
+  <div class="headertitle">
+<div class="title">J1939.c 文件参考</div>  </div>
+</div><!--header-->
+<div class="contents">
+<div class="textblock"><code>#include &quot;<a class="el" href="_j1939_8h_source.html">J1939.H</a>&quot;</code><br />
+<code>#include &quot;J1939_config.H&quot;</code><br />
+</div><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
+宏定义</h2></td></tr>
+<tr class="memitem:ab55f2bb2de37bed2b11c23da19d5dcbd"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ab55f2bb2de37bed2b11c23da19d5dcbd">__J1939_SOURCE</a></td></tr>
+<tr class="separator:ab55f2bb2de37bed2b11c23da19d5dcbd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a37f842489d7814b817e85e8964f5f5c7"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a37f842489d7814b817e85e8964f5f5c7">J1939_TRUE</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:a37f842489d7814b817e85e8964f5f5c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e48078402780582d36e0dc67b46f3d6"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a6e48078402780582d36e0dc67b46f3d6">J1939_FALSE</a>&#160;&#160;&#160;0</td></tr>
+<tr class="separator:a6e48078402780582d36e0dc67b46f3d6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaf1484bf6a9d9b12ac8783d33f0e1fbf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#aaf1484bf6a9d9b12ac8783d33f0e1fbf">ADDRESS_CLAIM_TX</a>&#160;&#160;&#160;1</td></tr>
+<tr class="separator:aaf1484bf6a9d9b12ac8783d33f0e1fbf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50849c854d57fd5e53ddb0ee306e45eb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a50849c854d57fd5e53ddb0ee306e45eb">ADDRESS_CLAIM_RX</a>&#160;&#160;&#160;2</td></tr>
+<tr class="separator:a50849c854d57fd5e53ddb0ee306e45eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
+函数</h2></td></tr>
+<tr class="memitem:aa07e4bcbb4b15635d7b2ec439df7f36b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#aa07e4bcbb4b15635d7b2ec439df7f36b">CompareName</a> (<a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> *OtherName)</td></tr>
+<tr class="separator:aa07e4bcbb4b15635d7b2ec439df7f36b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8adae1a208816f59b056dacdf4a1c9dd"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a8adae1a208816f59b056dacdf4a1c9dd">CopyName</a> (void)</td></tr>
+<tr class="separator:a8adae1a208816f59b056dacdf4a1c9dd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a88d6b7cfeaf30cc059f29c37a5022144"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a88d6b7cfeaf30cc059f29c37a5022144">SetAddressFilter</a> (<a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> Address)</td></tr>
+<tr class="separator:a88d6b7cfeaf30cc059f29c37a5022144"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ae22bd52cf1f3f2b96b2c0e4fac0a02"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a1ae22bd52cf1f3f2b96b2c0e4fac0a02">SendOneMessage</a> (<a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *MsgPtr)</td></tr>
+<tr class="separator:a1ae22bd52cf1f3f2b96b2c0e4fac0a02"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a399968a0d6eedb5fb72c3e05b00cf157"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a399968a0d6eedb5fb72c3e05b00cf157">J1939_AddressClaimHandling</a> (<a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> Mode)</td></tr>
+<tr class="separator:a399968a0d6eedb5fb72c3e05b00cf157"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2bb9111daa06c5f3975b2f5a3b586527"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage</a> (<a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *MsgPtr, <a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a> _Can_Node)</td></tr>
+<tr class="separator:a2bb9111daa06c5f3975b2f5a3b586527"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac593e3a3951a73cc41fc5a8391a0e061"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ac593e3a3951a73cc41fc5a8391a0e061">J1939_EnqueueMessage</a> (<a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *MsgPtr, <a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a> _Can_Node)</td></tr>
+<tr class="separator:ac593e3a3951a73cc41fc5a8391a0e061"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1634bbde52e0474441f60598fa194e7d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a1634bbde52e0474441f60598fa194e7d">J1939_Initialization</a> (<a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> InitNAMEandAddress)</td></tr>
+<tr class="separator:a1634bbde52e0474441f60598fa194e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae3af6eb5f5c9e22969fed04cf3e69a7e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ae3af6eb5f5c9e22969fed04cf3e69a7e">J1939_ISR</a> (void)</td></tr>
+<tr class="separator:ae3af6eb5f5c9e22969fed04cf3e69a7e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac4849b368e4286a1154f4eaadef215b2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll</a> (<a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a> ElapsedTime)</td></tr>
+<tr class="separator:ac4849b368e4286a1154f4eaadef215b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7200a622843a5f2e07a399fbcb58e5d1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a7200a622843a5f2e07a399fbcb58e5d1">J1939_ReceiveMessages</a> (void)</td></tr>
+<tr class="separator:a7200a622843a5f2e07a399fbcb58e5d1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa5d467785362d508c9ca25bfd214b743"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#aa5d467785362d508c9ca25bfd214b743">J1939_RequestForAddressClaimHandling</a> (void)</td></tr>
+<tr class="separator:aa5d467785362d508c9ca25bfd214b743"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1137f41f3a796c02561548a8c3e66419"><td class="memItemLeft" align="right" valign="top">static <a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a1137f41f3a796c02561548a8c3e66419">J1939_TransmitMessages</a> (void)</td></tr>
+<tr class="separator:a1137f41f3a796c02561548a8c3e66419"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a385dc052e4ddfd999c1b01789aa32178"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a385dc052e4ddfd999c1b01789aa32178">J1939_TP_DT_Packet_send</a> (void)</td></tr>
+<tr class="separator:a385dc052e4ddfd999c1b01789aa32178"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a438320249da39cfc532e2100656f8de4"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a438320249da39cfc532e2100656f8de4">J1939_CM_Start</a> (void)</td></tr>
+<tr class="separator:a438320249da39cfc532e2100656f8de4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a730b95df1a0507efddb77f60366cfcb9"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a730b95df1a0507efddb77f60366cfcb9">J1939_TP_TX_Abort</a> (void)</td></tr>
+<tr class="separator:a730b95df1a0507efddb77f60366cfcb9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b1dca381d4b4cd1d4b03acfe9425566"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a7b1dca381d4b4cd1d4b03acfe9425566">J1939_TP_RX_Abort</a> (void)</td></tr>
+<tr class="separator:a7b1dca381d4b4cd1d4b03acfe9425566"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4953d80daba466bb9acfd9eca4d364de"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a4953d80daba466bb9acfd9eca4d364de">J1939_TP_TX_RefreshCMTimer</a> (<a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a> dt_ms)</td></tr>
+<tr class="separator:a4953d80daba466bb9acfd9eca4d364de"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3dd8f6747d2fba931ed25c86cabc2fb3"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a3dd8f6747d2fba931ed25c86cabc2fb3">J1939_TP_RX_RefreshCMTimer</a> (<a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a> dt_ms)</td></tr>
+<tr class="separator:a3dd8f6747d2fba931ed25c86cabc2fb3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a177463623796c28da14f46c18896b70c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a177463623796c28da14f46c18896b70c">J1939_read_DT_Packet</a> ()</td></tr>
+<tr class="separator:a177463623796c28da14f46c18896b70c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab448e8aaa3a5fd2c08060037b9a626f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ab448e8aaa3a5fd2c08060037b9a626f1">J1939_TP_Poll</a> ()</td></tr>
+<tr class="separator:ab448e8aaa3a5fd2c08060037b9a626f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6e74b7d1cee40c90f381c8e847461dcf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a6e74b7d1cee40c90f381c8e847461dcf">J1939_TP_TX_Message</a> (<a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a> PGN, <a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> SA, <a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> *data, <a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a> data_num, <a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a> _Can_Node)</td></tr>
+<tr class="separator:a6e74b7d1cee40c90f381c8e847461dcf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad861ff483284f4047185d6c6b6db871c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ad861ff483284f4047185d6c6b6db871c">J1939_TP_RX_Message</a> (<a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> *data, <a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a> data_num, <a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a> _Can_Node)</td></tr>
+<tr class="separator:ad861ff483284f4047185d6c6b6db871c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="var-members"></a>
+变量</h2></td></tr>
+<tr class="memitem:a0ab4d77b4a979699410c3e93cab48ac8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a0ab4d77b4a979699410c3e93cab48ac8">CA_Name</a> [<a class="el" href="_j1939_8h.html#aadceff371bcad3c9d06f71a011fa5cee">J1939_DATA_LENGTH</a>]</td></tr>
+<tr class="separator:a0ab4d77b4a979699410c3e93cab48ac8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aafe4a4c102b646e2b3fb29105e7c884d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#aafe4a4c102b646e2b3fb29105e7c884d">CommandedAddress</a></td></tr>
+<tr class="separator:aafe4a4c102b646e2b3fb29105e7c884d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94934ce5cb70df13c42fcb2c8ecbb616"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a94934ce5cb70df13c42fcb2c8ecbb616">ContentionWaitTime</a></td></tr>
+<tr class="separator:a94934ce5cb70df13c42fcb2c8ecbb616"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a43c0c9b5685f17f61fa5e63893cbd1ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a43c0c9b5685f17f61fa5e63893cbd1ea">J1939_Address</a></td></tr>
+<tr class="separator:a43c0c9b5685f17f61fa5e63893cbd1ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae355572f0ddf01198a7c89b954c5ef50"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#a86151355d614604c0f08dac863fa8203">J1939_FLAG</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ae355572f0ddf01198a7c89b954c5ef50">J1939_Flags</a></td></tr>
+<tr class="separator:ae355572f0ddf01198a7c89b954c5ef50"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a372cb21810e1db391572bdfcd12d9b9f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a372cb21810e1db391572bdfcd12d9b9f">OneMessage</a></td></tr>
+<tr class="separator:a372cb21810e1db391572bdfcd12d9b9f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a516933a0e2ae5ffa163e3b2ed9177692"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a516933a0e2ae5ffa163e3b2ed9177692">Can_Node</a></td></tr>
+<tr class="separator:a516933a0e2ae5ffa163e3b2ed9177692"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a043d31f09fe35c810704a7552569fce7"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a043d31f09fe35c810704a7552569fce7">RXHead_1</a></td></tr>
+<tr class="separator:a043d31f09fe35c810704a7552569fce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8b46edde5a7ae029d3eca60ab9941dde"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a8b46edde5a7ae029d3eca60ab9941dde">RXTail_1</a></td></tr>
+<tr class="separator:a8b46edde5a7ae029d3eca60ab9941dde"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac90d3f0f72dfa291ad614389449b2926"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ac90d3f0f72dfa291ad614389449b2926">RXQueueCount_1</a></td></tr>
+<tr class="separator:ac90d3f0f72dfa291ad614389449b2926"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aaa841fa47872296f56b0c50d0b8f7b3b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#aaa841fa47872296f56b0c50d0b8f7b3b">RXQueue_1</a> [J1939_RX_QUEUE_SIZE]</td></tr>
+<tr class="separator:aaa841fa47872296f56b0c50d0b8f7b3b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1f6900310a1b1e7fd136b05af054acd8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a1f6900310a1b1e7fd136b05af054acd8">TXHead_1</a></td></tr>
+<tr class="separator:a1f6900310a1b1e7fd136b05af054acd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc93eaf504af5ac870c718d5bbb2e050"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#acc93eaf504af5ac870c718d5bbb2e050">TXTail_1</a></td></tr>
+<tr class="separator:acc93eaf504af5ac870c718d5bbb2e050"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a256a54e264aa5d5b270837c7d1d88725"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a256a54e264aa5d5b270837c7d1d88725">TXQueueCount_1</a></td></tr>
+<tr class="separator:a256a54e264aa5d5b270837c7d1d88725"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1550b45f6d5bf636ef62200199bcd094"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a1550b45f6d5bf636ef62200199bcd094">TXQueue_1</a> [J1939_TX_QUEUE_SIZE]</td></tr>
+<tr class="separator:a1550b45f6d5bf636ef62200199bcd094"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad283f5b7ac558ba68e352d6323ab7463"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ad283f5b7ac558ba68e352d6323ab7463">RXHead_2</a></td></tr>
+<tr class="separator:ad283f5b7ac558ba68e352d6323ab7463"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acff8a63feb64eba3a796c220c48bded8"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#acff8a63feb64eba3a796c220c48bded8">RXTail_2</a></td></tr>
+<tr class="separator:acff8a63feb64eba3a796c220c48bded8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad5bc94ea0d0b6c15c14cb7bc627cdbbc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ad5bc94ea0d0b6c15c14cb7bc627cdbbc">RXQueueCount_2</a></td></tr>
+<tr class="separator:ad5bc94ea0d0b6c15c14cb7bc627cdbbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c48b5e33e32113e2d2ec87f0cd1cb69"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a9c48b5e33e32113e2d2ec87f0cd1cb69">RXQueue_2</a> [J1939_RX_QUEUE_SIZE]</td></tr>
+<tr class="separator:a9c48b5e33e32113e2d2ec87f0cd1cb69"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a93c2d89fa1e773f4ee17941c85b7cded"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a93c2d89fa1e773f4ee17941c85b7cded">TXHead_2</a></td></tr>
+<tr class="separator:a93c2d89fa1e773f4ee17941c85b7cded"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a944fc5bf685f0e5e273c0054b07b5a5c"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a944fc5bf685f0e5e273c0054b07b5a5c">TXTail_2</a></td></tr>
+<tr class="separator:a944fc5bf685f0e5e273c0054b07b5a5c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5ec69896287ad91cbbba9de41dc68049"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a5ec69896287ad91cbbba9de41dc68049">TXQueueCount_2</a></td></tr>
+<tr class="separator:a5ec69896287ad91cbbba9de41dc68049"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae39e6e709d8f8fe1c5e70f52e4b89db2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ae39e6e709d8f8fe1c5e70f52e4b89db2">TXQueue_2</a> [J1939_TX_QUEUE_SIZE]</td></tr>
+<tr class="separator:ae39e6e709d8f8fe1c5e70f52e4b89db2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4f209d0b4e9775c5da3473ec7a344ea"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ab4f209d0b4e9775c5da3473ec7a344ea">RXHead_3</a></td></tr>
+<tr class="separator:ab4f209d0b4e9775c5da3473ec7a344ea"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7cd5efa3f545389c3f116fb3101173d5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a7cd5efa3f545389c3f116fb3101173d5">RXTail_3</a></td></tr>
+<tr class="separator:a7cd5efa3f545389c3f116fb3101173d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acd30cc17c6a204fdd2bc19ec788f56b5"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#acd30cc17c6a204fdd2bc19ec788f56b5">RXQueueCount_3</a></td></tr>
+<tr class="separator:acd30cc17c6a204fdd2bc19ec788f56b5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1ed1a2862f205d235936ae1e4dcbe9af"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a1ed1a2862f205d235936ae1e4dcbe9af">RXQueue_3</a> [J1939_RX_QUEUE_SIZE]</td></tr>
+<tr class="separator:a1ed1a2862f205d235936ae1e4dcbe9af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a432feea0b44d8580851b509d388b93f6"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a432feea0b44d8580851b509d388b93f6">TXHead_3</a></td></tr>
+<tr class="separator:a432feea0b44d8580851b509d388b93f6"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5455ae9c8f86be2fedd0394dd4ce1311"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a5455ae9c8f86be2fedd0394dd4ce1311">TXTail_3</a></td></tr>
+<tr class="separator:a5455ae9c8f86be2fedd0394dd4ce1311"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a144786a0766b8a188c0d8157bccd8d31"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a144786a0766b8a188c0d8157bccd8d31">TXQueueCount_3</a></td></tr>
+<tr class="separator:a144786a0766b8a188c0d8157bccd8d31"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad3a1cb7625142688d70999d289cab77d"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ad3a1cb7625142688d70999d289cab77d">TXQueue_3</a> [J1939_TX_QUEUE_SIZE]</td></tr>
+<tr class="separator:ad3a1cb7625142688d70999d289cab77d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5bbdd0e2bdcfad9f8ee3b72eb91652eb"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a5bbdd0e2bdcfad9f8ee3b72eb91652eb">RXHead_4</a></td></tr>
+<tr class="separator:a5bbdd0e2bdcfad9f8ee3b72eb91652eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0af4b50e7f1ff790c1040aaed2f8461"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ae0af4b50e7f1ff790c1040aaed2f8461">RXTail_4</a></td></tr>
+<tr class="separator:ae0af4b50e7f1ff790c1040aaed2f8461"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac8891752adf5809948d4f599be0c89b9"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ac8891752adf5809948d4f599be0c89b9">RXQueueCount_4</a></td></tr>
+<tr class="separator:ac8891752adf5809948d4f599be0c89b9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab5f4ff985342b9fc78156c6d8256851b"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ab5f4ff985342b9fc78156c6d8256851b">RXQueue_4</a> [J1939_RX_QUEUE_SIZE]</td></tr>
+<tr class="separator:ab5f4ff985342b9fc78156c6d8256851b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aab8e5a8561fe870eabc712fc4d0f9e59"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#aab8e5a8561fe870eabc712fc4d0f9e59">TXHead_4</a></td></tr>
+<tr class="separator:aab8e5a8561fe870eabc712fc4d0f9e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a837eb6fb557249135ca12a3878dd9acf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a837eb6fb557249135ca12a3878dd9acf">TXTail_4</a></td></tr>
+<tr class="separator:a837eb6fb557249135ca12a3878dd9acf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab0906913d1ffbebf0487334db1363baf"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#ab0906913d1ffbebf0487334db1363baf">TXQueueCount_4</a></td></tr>
+<tr class="separator:ab0906913d1ffbebf0487334db1363baf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1699f5acd8df5093a4b7fa9485ce7a43"><td class="memItemLeft" align="right" valign="top"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a1699f5acd8df5093a4b7fa9485ce7a43">TXQueue_4</a> [J1939_TX_QUEUE_SIZE]</td></tr>
+<tr class="separator:a1699f5acd8df5093a4b7fa9485ce7a43"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3cd164d145a9591e76b9a132f081343f"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_j1939___t_p___flags.html">J1939_TP_Flags</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a3cd164d145a9591e76b9a132f081343f">J1939_TP_Flags_t</a></td></tr>
+<tr class="separator:a3cd164d145a9591e76b9a132f081343f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a328a85ed89ea3f1db6409f19d398e8dc"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_j1939___t_r_a_n_s_p_o_r_t___r_x___i_n_f_o.html">J1939_TRANSPORT_RX_INFO</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a328a85ed89ea3f1db6409f19d398e8dc">TP_RX_MSG</a></td></tr>
+<tr class="separator:a328a85ed89ea3f1db6409f19d398e8dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a412a308ac55b56a287b968ee9a44609a"><td class="memItemLeft" align="right" valign="top"><a class="el" href="struct_j1939___t_r_a_n_s_p_o_r_t___t_x___i_n_f_o.html">J1939_TRANSPORT_TX_INFO</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="_j1939_8c.html#a412a308ac55b56a287b968ee9a44609a">TP_TX_MSG</a></td></tr>
+<tr class="separator:a412a308ac55b56a287b968ee9a44609a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table>
+<h2 class="groupheader">宏定义说明</h2>
+<a id="ab55f2bb2de37bed2b11c23da19d5dcbd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab55f2bb2de37bed2b11c23da19d5dcbd">&#9670;&nbsp;</a></span>__J1939_SOURCE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define __J1939_SOURCE</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50849c854d57fd5e53ddb0ee306e45eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50849c854d57fd5e53ddb0ee306e45eb">&#9670;&nbsp;</a></span>ADDRESS_CLAIM_RX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDRESS_CLAIM_RX&#160;&#160;&#160;2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>进入地址竞争接受处理模式 </p>
+
+</div>
+</div>
+<a id="aaf1484bf6a9d9b12ac8783d33f0e1fbf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaf1484bf6a9d9b12ac8783d33f0e1fbf">&#9670;&nbsp;</a></span>ADDRESS_CLAIM_TX</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define ADDRESS_CLAIM_TX&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>进入地址竞争发送处理模式 </p>
+
+</div>
+</div>
+<a id="a6e48078402780582d36e0dc67b46f3d6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e48078402780582d36e0dc67b46f3d6">&#9670;&nbsp;</a></span>J1939_FALSE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define J1939_FALSE&#160;&#160;&#160;0</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>代表函数错误返回 </p>
+
+</div>
+</div>
+<a id="a37f842489d7814b817e85e8964f5f5c7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37f842489d7814b817e85e8964f5f5c7">&#9670;&nbsp;</a></span>J1939_TRUE</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define J1939_TRUE&#160;&#160;&#160;1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>代表函数正确返回 </p>
+
+</div>
+</div>
+<h2 class="groupheader">函数说明</h2>
+<a id="aa07e4bcbb4b15635d7b2ec439df7f36b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa07e4bcbb4b15635d7b2ec439df7f36b">&#9670;&nbsp;</a></span>CompareName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> CompareName </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> *&#160;</td>
+          <td class="paramname"><em>OtherName</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">uint8_t</td><td>* Array of NAME bytes </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>-1 CA_Name 是小于 OtherName </dd>
+<dd>
+0 CA_Name与OtherName 相等 </dd>
+<dd>
+1 CA_Name 是大于 OtherName </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>比较传入的数组数据名称与设备当前名称存储在CA_Name。 </dd></dl>
+
+</div>
+</div>
+<a id="a8adae1a208816f59b056dacdf4a1c9dd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8adae1a208816f59b056dacdf4a1c9dd">&#9670;&nbsp;</a></span>CopyName()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void CopyName </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>设备名字复制到消息缓冲区的数据数组。我们可以使用这个函数在其他的函数,不会使用任何额外的堆栈空间。 </dd></dl>
+
+</div>
+</div>
+<a id="a399968a0d6eedb5fb72c3e05b00cf157"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a399968a0d6eedb5fb72c3e05b00cf157">&#9670;&nbsp;</a></span>J1939_AddressClaimHandling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_AddressClaimHandling </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td>
+          <td class="paramname"><em>Mode</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">ADDRESS_CLAIM_RX</td><td>或 ADDRESS_CLAIM_TX </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>1939地址请求处理 （参考J1939的网络层）<br />
+ 这段程序被调用，当CA必须要求其地址在总线上或另一个CA是试图声称相同的地址在总线上,<br />
+ 我们必须捍卫自己或放弃的地址。<br />
+ 如果CA的私有范围有一个地址0 - 127或248-253,它可以立即解决。<br />
+ 补充：<br />
+ ADDRESS_CLAIM_RX表示一个地址声明消息已经收到,这个CA必须保卫或放弃其地址。<br />
+ ADDRESS_CLAIM_TX表明CA是初始化一个声明其地址。<br />
+</dd></dl>
+
+</div>
+</div>
+<a id="a438320249da39cfc532e2100656f8de4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a438320249da39cfc532e2100656f8de4">&#9670;&nbsp;</a></span>J1939_CM_Start()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_CM_Start </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>发送TP。CM-RTS,16,23,4,255,PGN消息，参考J1939-21， </dd></dl>
+
+</div>
+</div>
+<a id="a2bb9111daa06c5f3975b2f5a3b586527"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2bb9111daa06c5f3975b2f5a3b586527">&#9670;&nbsp;</a></span>J1939_DequeueMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_DequeueMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *&#160;</td>
+          <td class="paramname"><em>MsgPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a>&#160;</td>
+          <td class="paramname"><em>_Can_Node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>RC_SUCCESS 消息列中移除成功 </dd>
+<dd>
+RC_QUEUEEMPTY 没有消息返回 </dd>
+<dd>
+RC_CANNOTRECEIVE 目前系统没有接受到消息，应为不能在网络中申请到地址 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>从接受队列中读取一个信息到*MsgPtr。如果我们用的是中断，需要将中断失能，在获取接受队列数据时 </dd></dl>
+
+</div>
+</div>
+<a id="ac593e3a3951a73cc41fc5a8391a0e061"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac593e3a3951a73cc41fc5a8391a0e061">&#9670;&nbsp;</a></span>J1939_EnqueueMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_EnqueueMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *&#160;</td>
+          <td class="paramname"><em>MsgPtr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a>&#160;</td>
+          <td class="paramname"><em>_Can_Node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">J1939_MESSAGE</td><td>* 用户要入队的消息 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>RC_SUCCESS 消息入队成功 </dd>
+<dd>
+RC_QUEUEFULL 发送列队满，消息入队失败 </dd>
+<dd>
+RC_CANNOTTRANSMIT 系统目前不能发送消息 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>这段程序，将*MsgPtr放入发送消息列队中<br />
+ 如果信息不能入队或者发送，将有一个相应的返回提示，<br />
+ 如果发送中断被设置（可用），当消息列队后，发送中断被使能 </dd></dl>
+
+</div>
+</div>
+<a id="a1634bbde52e0474441f60598fa194e7d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1634bbde52e0474441f60598fa194e7d">&#9670;&nbsp;</a></span>J1939_Initialization()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_Initialization </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td>
+          <td class="paramname"><em>InitNAMEandAddress</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">InitNAMEandAddress</td><td>是否需要初始化标识符 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>这段代码被调用，在系统初始化中。（放在CAN设备初始化之后）<br />
+ 初始化J1939全局变量<br />
+ 然后在总线上，声明设备自己的地址<br />
+ 如果设备需要初始化自己的标识符和地址，将InitNAMEandAddress置位。 </dd></dl>
+
+</div>
+</div>
+<a id="ae3af6eb5f5c9e22969fed04cf3e69a7e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae3af6eb5f5c9e22969fed04cf3e69a7e">&#9670;&nbsp;</a></span>J1939_ISR()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_ISR </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>这个函数被调用，当设备产生CAN中断（可能是接受中断，也可能是发送中断）<br />
+ 首先我们要清除中断标识位<br />
+ 然后调用接受或者发送函数。 </dd></dl>
+
+</div>
+</div>
+<a id="ac4849b368e4286a1154f4eaadef215b2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac4849b368e4286a1154f4eaadef215b2">&#9670;&nbsp;</a></span>J1939_Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_Poll </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a>&#160;</td>
+          <td class="paramname"><em>ElapsedTime</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">j1939_uint8_t</td><td>一个大概的毫秒数，通常设置 5 或 3 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>如果我们采用轮询的方式获取信息，这个函数每几个毫秒将被调用一次。<br />
+ 不断的接受消息和发送消息从消息队列中<br />
+ 此外，如果我们正在等待一个地址竞争反应。<br />
+ 如果超时，我们只接收特定的消息（目标地址 = J1939_Address）<br />
+ 如果设备使用中断，此函数被调用，在调用J1939_Initialization（）函数后，因为<br />
+ J1939_Initialization（）可能初始化WaitingForAddressClaimContention标识位为1.<br />
+ 如果接受到命令地址消息，这个函数也必须被调用，以防万一总线要求我们改变地址<br />
+ 如果使用中断模式，本程序将不会处理接受和发送消息，只处理地址竞争超时。<br />
+</dd></dl>
+
+</div>
+</div>
+<a id="a177463623796c28da14f46c18896b70c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a177463623796c28da14f46c18896b70c">&#9670;&nbsp;</a></span>J1939_read_DT_Packet()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_read_DT_Packet </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>发送读取数据 TP.CM_CTS 和 EndofMsgAck消息。 </dd></dl>
+
+</div>
+</div>
+<a id="a7200a622843a5f2e07a399fbcb58e5d1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7200a622843a5f2e07a399fbcb58e5d1">&#9670;&nbsp;</a></span>J1939_ReceiveMessages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_ReceiveMessages </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>这段程序被调用，当CAN收发器接受数据后从中断 或者 轮询。<br />
+ 如果一个信息被接受, 它将被调用<br />
+ 如果信息是一个网络管理信息或长帧传输（TP），接受的信息将被加工处理，在这个函数中。<br />
+ 否则, 信息将放置在用户的接收队列。<br />
+ 注意：在这段程序运行期间中断是失能的。<br />
+ 注意：为了节省空间，函数J1939_CommandedAddressHandling（）采用内联的函数<br />
+</dd></dl>
+
+</div>
+</div>
+<a id="aa5d467785362d508c9ca25bfd214b743"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa5d467785362d508c9ca25bfd214b743">&#9670;&nbsp;</a></span>J1939_RequestForAddressClaimHandling()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_RequestForAddressClaimHandling </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>如果接收到地址声明请求，这个函数将被调用<br />
+ 如果我们的设备不需要发送一个地址声明，我们将不发送地址声明消息，否则，反之。<br />
+ 为了减少代码大小。两条消息之间只有源地址的变化。 </dd></dl>
+
+</div>
+</div>
+<a id="a385dc052e4ddfd999c1b01789aa32178"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a385dc052e4ddfd999c1b01789aa32178">&#9670;&nbsp;</a></span>J1939_TP_DT_Packet_send()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_TP_DT_Packet_send </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>发送TP.DT，参考J1939-21 </dd></dl>
+
+</div>
+</div>
+<a id="ab448e8aaa3a5fd2c08060037b9a626f1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab448e8aaa3a5fd2c08060037b9a626f1">&#9670;&nbsp;</a></span>J1939_TP_Poll()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_TP_Poll </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>TP协议的心跳，为了满足在总线的计时准确，10ms轮询一次 J1939_TP_TX_RefreshCMTimer(10)<br />
+ 如果想要更高的分辨率，1ms轮询一次，但是要改下面计时函数 J1939_TP_TX_RefreshCMTimer(1) </dd></dl>
+
+</div>
+</div>
+<a id="a7b1dca381d4b4cd1d4b03acfe9425566"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b1dca381d4b4cd1d4b03acfe9425566">&#9670;&nbsp;</a></span>J1939_TP_RX_Abort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_TP_RX_Abort </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>中断TP链接 </dd></dl>
+
+</div>
+</div>
+<a id="ad861ff483284f4047185d6c6b6db871c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad861ff483284f4047185d6c6b6db871c">&#9670;&nbsp;</a></span>J1939_TP_RX_Message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> J1939_TP_RX_Message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a>&#160;</td>
+          <td class="paramname"><em>data_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a>&#160;</td>
+          <td class="paramname"><em>_Can_Node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">data</td><td>读取数据的缓存 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_num</td><td>读取数据的缓存大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>RC_CANNOTRECEIVE 不能接受，TP协议正在接受数据中 </dd>
+<dd>
+RC_SUCCESS 读取数据成功 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>TP的接受函数 , 接受缓存的大小必须大于接受数据的大小，建议初始化缓存大小用 J1939_TP_MAX_MESSAGE_LENGTH<br />
+ 请正确带入 缓存区的大小，参数错误程序运行有风险 </dd></dl>
+
+</div>
+</div>
+<a id="a3dd8f6747d2fba931ed25c86cabc2fb3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3dd8f6747d2fba931ed25c86cabc2fb3">&#9670;&nbsp;</a></span>J1939_TP_RX_RefreshCMTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_TP_RX_RefreshCMTimer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a>&#160;</td>
+          <td class="paramname"><em>dt_ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>TP的计时器 </dd></dl>
+
+</div>
+</div>
+<a id="a730b95df1a0507efddb77f60366cfcb9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a730b95df1a0507efddb77f60366cfcb9">&#9670;&nbsp;</a></span>J1939_TP_TX_Abort()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void J1939_TP_TX_Abort </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>中断TP链接 </dd></dl>
+
+</div>
+</div>
+<a id="a6e74b7d1cee40c90f381c8e847461dcf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6e74b7d1cee40c90f381c8e847461dcf">&#9670;&nbsp;</a></span>J1939_TP_TX_Message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> J1939_TP_TX_Message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a>&#160;</td>
+          <td class="paramname"><em>PGN</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td>
+          <td class="paramname"><em>SA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a>&#160;</td>
+          <td class="paramname"><em>data_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a>&#160;</td>
+          <td class="paramname"><em>_Can_Node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>这是一个非阻塞io接口</p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">PGN</td><td>TP会话的参数群编号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">SA</td><td>TP会话的目标地址 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>TP会话的数据缓存地址 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_num</td><td>TP会话的数据大小 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>RC_SUCCESS 成功打开TP链接，开始进入发送流程 </dd>
+<dd>
+RC_CANNOTTRANSMIT 不能发送，因为TP协议已经建立虚拟链接，并且未断开 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>TP协议的发送函数 </dd></dl>
+
+</div>
+</div>
+<a id="a4953d80daba466bb9acfd9eca4d364de"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4953d80daba466bb9acfd9eca4d364de">&#9670;&nbsp;</a></span>J1939_TP_TX_RefreshCMTimer()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_TP_TX_RefreshCMTimer </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a>&#160;</td>
+          <td class="paramname"><em>dt_ms</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>TP的计时器 </dd></dl>
+
+</div>
+</div>
+<a id="a1137f41f3a796c02561548a8c3e66419"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1137f41f3a796c02561548a8c3e66419">&#9670;&nbsp;</a></span>J1939_TransmitMessages()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static <a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_TransmitMessages </td>
+          <td>(</td>
+          <td class="paramtype">void&#160;</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>返回</dt><dd>RC_SUCCESS 信息发送成功 </dd>
+<dd>
+RC_CANNOTTRANSMIT 系统没有发送消息，因为设备没有申请到地址，或者没有要发送的消息,或错误的CAN设备 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>调用这个函数后，如果发送消息列队中有消息就位，则会发送消息 ，如果不能发送消息，相关的错误代码将返回。<br />
+ 程序运行期间，中断是被失能的。 </dd></dl>
+
+</div>
+</div>
+<a id="a1ae22bd52cf1f3f2b96b2c0e4fac0a02"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ae22bd52cf1f3f2b96b2c0e4fac0a02">&#9670;&nbsp;</a></span>SendOneMessage()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SendOneMessage </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *&#160;</td>
+          <td class="paramname"><em>MsgPtr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">J1939_MESSAGE</td><td>* </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section note"><dt>注解</dt><dd>发送*MsgPtr的信息，<br />
+ 所有的数据字段（比如数据长度、优先级、和源地址）必须已经设置。<br />
+ 在调用这个函数之前，设备在总线上声明的地址是正确的。 </dd></dl>
+
+</div>
+</div>
+<a id="a88d6b7cfeaf30cc059f29c37a5022144"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a88d6b7cfeaf30cc059f29c37a5022144">&#9670;&nbsp;</a></span>SetAddressFilter()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">void SetAddressFilter </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td>
+          <td class="paramname"><em>Address</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<dl class="section note"><dt>注解</dt><dd>设置过滤器为指定值，起到过滤地址作用。(参考CAN2.0B的滤波器)<br />
+ 滤波函数的设置段为PS段 </dd></dl>
+
+</div>
+</div>
+<h2 class="groupheader">变量说明</h2>
+<a id="a0ab4d77b4a979699410c3e93cab48ac8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0ab4d77b4a979699410c3e93cab48ac8">&#9670;&nbsp;</a></span>CA_Name</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> CA_Name[<a class="el" href="_j1939_8h.html#aadceff371bcad3c9d06f71a011fa5cee">J1939_DATA_LENGTH</a>]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<p>设备的标称符</p>
+<p>我们需要在"J1939_config.H"中配置 </p><dl class="section note"><dt>注解</dt><dd>在初始化中赋值，赋值参考参考1939-81文档 </dd></dl>
+
+</div>
+</div>
+<a id="a516933a0e2ae5ffa163e3b2ed9177692"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a516933a0e2ae5ffa163e3b2ed9177692">&#9670;&nbsp;</a></span>Can_Node</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a> Can_Node</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aafe4a4c102b646e2b3fb29105e7c884d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aafe4a4c102b646e2b3fb29105e7c884d">&#9670;&nbsp;</a></span>CommandedAddress</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> CommandedAddress</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a94934ce5cb70df13c42fcb2c8ecbb616"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94934ce5cb70df13c42fcb2c8ecbb616">&#9670;&nbsp;</a></span>ContentionWaitTime</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a> ContentionWaitTime</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a43c0c9b5685f17f61fa5e63893cbd1ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a43c0c9b5685f17f61fa5e63893cbd1ea">&#9670;&nbsp;</a></span>J1939_Address</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_Address</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae355572f0ddf01198a7c89b954c5ef50"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae355572f0ddf01198a7c89b954c5ef50">&#9670;&nbsp;</a></span>J1939_Flags</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#a86151355d614604c0f08dac863fa8203">J1939_FLAG</a> J1939_Flags</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3cd164d145a9591e76b9a132f081343f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3cd164d145a9591e76b9a132f081343f">&#9670;&nbsp;</a></span>J1939_TP_Flags_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_j1939___t_p___flags.html">J1939_TP_Flags</a> J1939_TP_Flags_t</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a372cb21810e1db391572bdfcd12d9b9f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a372cb21810e1db391572bdfcd12d9b9f">&#9670;&nbsp;</a></span>OneMessage</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> OneMessage</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a043d31f09fe35c810704a7552569fce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a043d31f09fe35c810704a7552569fce7">&#9670;&nbsp;</a></span>RXHead_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXHead_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad283f5b7ac558ba68e352d6323ab7463"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad283f5b7ac558ba68e352d6323ab7463">&#9670;&nbsp;</a></span>RXHead_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXHead_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4f209d0b4e9775c5da3473ec7a344ea"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4f209d0b4e9775c5da3473ec7a344ea">&#9670;&nbsp;</a></span>RXHead_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXHead_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5bbdd0e2bdcfad9f8ee3b72eb91652eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5bbdd0e2bdcfad9f8ee3b72eb91652eb">&#9670;&nbsp;</a></span>RXHead_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXHead_4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aaa841fa47872296f56b0c50d0b8f7b3b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aaa841fa47872296f56b0c50d0b8f7b3b">&#9670;&nbsp;</a></span>RXQueue_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> RXQueue_1[J1939_RX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9c48b5e33e32113e2d2ec87f0cd1cb69"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c48b5e33e32113e2d2ec87f0cd1cb69">&#9670;&nbsp;</a></span>RXQueue_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> RXQueue_2[J1939_RX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1ed1a2862f205d235936ae1e4dcbe9af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1ed1a2862f205d235936ae1e4dcbe9af">&#9670;&nbsp;</a></span>RXQueue_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> RXQueue_3[J1939_RX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab5f4ff985342b9fc78156c6d8256851b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab5f4ff985342b9fc78156c6d8256851b">&#9670;&nbsp;</a></span>RXQueue_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> RXQueue_4[J1939_RX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac90d3f0f72dfa291ad614389449b2926"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac90d3f0f72dfa291ad614389449b2926">&#9670;&nbsp;</a></span>RXQueueCount_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXQueueCount_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad5bc94ea0d0b6c15c14cb7bc627cdbbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad5bc94ea0d0b6c15c14cb7bc627cdbbc">&#9670;&nbsp;</a></span>RXQueueCount_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXQueueCount_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acd30cc17c6a204fdd2bc19ec788f56b5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acd30cc17c6a204fdd2bc19ec788f56b5">&#9670;&nbsp;</a></span>RXQueueCount_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXQueueCount_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac8891752adf5809948d4f599be0c89b9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac8891752adf5809948d4f599be0c89b9">&#9670;&nbsp;</a></span>RXQueueCount_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXQueueCount_4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8b46edde5a7ae029d3eca60ab9941dde"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8b46edde5a7ae029d3eca60ab9941dde">&#9670;&nbsp;</a></span>RXTail_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXTail_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acff8a63feb64eba3a796c220c48bded8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acff8a63feb64eba3a796c220c48bded8">&#9670;&nbsp;</a></span>RXTail_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXTail_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7cd5efa3f545389c3f116fb3101173d5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7cd5efa3f545389c3f116fb3101173d5">&#9670;&nbsp;</a></span>RXTail_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXTail_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae0af4b50e7f1ff790c1040aaed2f8461"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0af4b50e7f1ff790c1040aaed2f8461">&#9670;&nbsp;</a></span>RXTail_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> RXTail_4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a328a85ed89ea3f1db6409f19d398e8dc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a328a85ed89ea3f1db6409f19d398e8dc">&#9670;&nbsp;</a></span>TP_RX_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_j1939___t_r_a_n_s_p_o_r_t___r_x___i_n_f_o.html">J1939_TRANSPORT_RX_INFO</a> TP_RX_MSG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a412a308ac55b56a287b968ee9a44609a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a412a308ac55b56a287b968ee9a44609a">&#9670;&nbsp;</a></span>TP_TX_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="struct_j1939___t_r_a_n_s_p_o_r_t___t_x___i_n_f_o.html">J1939_TRANSPORT_TX_INFO</a> TP_TX_MSG</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1f6900310a1b1e7fd136b05af054acd8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1f6900310a1b1e7fd136b05af054acd8">&#9670;&nbsp;</a></span>TXHead_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXHead_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a93c2d89fa1e773f4ee17941c85b7cded"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a93c2d89fa1e773f4ee17941c85b7cded">&#9670;&nbsp;</a></span>TXHead_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXHead_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a432feea0b44d8580851b509d388b93f6"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a432feea0b44d8580851b509d388b93f6">&#9670;&nbsp;</a></span>TXHead_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXHead_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aab8e5a8561fe870eabc712fc4d0f9e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aab8e5a8561fe870eabc712fc4d0f9e59">&#9670;&nbsp;</a></span>TXHead_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXHead_4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1550b45f6d5bf636ef62200199bcd094"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1550b45f6d5bf636ef62200199bcd094">&#9670;&nbsp;</a></span>TXQueue_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> TXQueue_1[J1939_TX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae39e6e709d8f8fe1c5e70f52e4b89db2"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae39e6e709d8f8fe1c5e70f52e4b89db2">&#9670;&nbsp;</a></span>TXQueue_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> TXQueue_2[J1939_TX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad3a1cb7625142688d70999d289cab77d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad3a1cb7625142688d70999d289cab77d">&#9670;&nbsp;</a></span>TXQueue_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> TXQueue_3[J1939_TX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1699f5acd8df5093a4b7fa9485ce7a43"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1699f5acd8df5093a4b7fa9485ce7a43">&#9670;&nbsp;</a></span>TXQueue_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> TXQueue_4[J1939_TX_QUEUE_SIZE]</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a256a54e264aa5d5b270837c7d1d88725"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a256a54e264aa5d5b270837c7d1d88725">&#9670;&nbsp;</a></span>TXQueueCount_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXQueueCount_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5ec69896287ad91cbbba9de41dc68049"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5ec69896287ad91cbbba9de41dc68049">&#9670;&nbsp;</a></span>TXQueueCount_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXQueueCount_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a144786a0766b8a188c0d8157bccd8d31"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a144786a0766b8a188c0d8157bccd8d31">&#9670;&nbsp;</a></span>TXQueueCount_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXQueueCount_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab0906913d1ffbebf0487334db1363baf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab0906913d1ffbebf0487334db1363baf">&#9670;&nbsp;</a></span>TXQueueCount_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXQueueCount_4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acc93eaf504af5ac870c718d5bbb2e050"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc93eaf504af5ac870c718d5bbb2e050">&#9670;&nbsp;</a></span>TXTail_1</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXTail_1</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a944fc5bf685f0e5e273c0054b07b5a5c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a944fc5bf685f0e5e273c0054b07b5a5c">&#9670;&nbsp;</a></span>TXTail_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXTail_2</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a5455ae9c8f86be2fedd0394dd4ce1311"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5455ae9c8f86be2fedd0394dd4ce1311">&#9670;&nbsp;</a></span>TXTail_3</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXTail_3</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a837eb6fb557249135ca12a3878dd9acf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a837eb6fb557249135ca12a3878dd9acf">&#9670;&nbsp;</a></span>TXTail_4</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> TXTail_4</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+</div><!-- contents -->
+</div><!-- doc-content -->
+<!-- start footer part -->
+<div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
+  <ul>
+    <li class="navelem"><a class="el" href="_j1939_8c.html">J1939.c</a></li>
+    <li class="footer">制作者
+    <a href="http://www.doxygen.org/index.html">
+    <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
+  </ul>
+</div>
+</body>
+</html>
