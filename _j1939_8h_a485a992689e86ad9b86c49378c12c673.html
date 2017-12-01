@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>J1939Socket: 结构体索引</title>
+<title>J1939Socket: J1939_TP_TX_Message</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('classes.html','');});
+$(document).ready(function(){initNavTree('_j1939_8h_a485a992689e86ad9b86c49378c12c673.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -80,25 +80,75 @@ $(document).ready(function(){initNavTree('classes.html','');});
 </iframe>
 </div>
 
-<div class="header">
-  <div class="headertitle">
-<div class="title">结构体索引</div>  </div>
-</div><!--header-->
 <div class="contents">
-<div class="qindex"><a class="qindex" href="#letter_j">j</a></div>
-<table class="classindex">
-<tr><td rowspan="2" valign="bottom"><a name="letter_j"></a><table border="0" cellspacing="0" cellpadding="0"><tr><td><div class="ah">&#160;&#160;j&#160;&#160;</div></td></tr></table>
-</td><td valign="top"><a class="el" href="struct_j1939___m_e_s_s_a_g_e___u_n_i_o_n_1_1j1939___p_i_d.html">J1939_MESSAGE_UNION::j1939_PID</a>&#160;&#160;&#160;</td><td></td></tr>
-<tr><td></td><td></td></tr>
-<tr><td valign="top"><a class="el" href="union_j1939___m_e_s_s_a_g_e___u_n_i_o_n.html">J1939_MESSAGE_UNION</a>&#160;&#160;&#160;</td><td></td><td></td></tr>
-<tr><td></td><td></td><td></td></tr>
-</table>
-<div class="qindex"><a class="qindex" href="#letter_j">j</a></div>
+<a id="a485a992689e86ad9b86c49378c12c673"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a485a992689e86ad9b86c49378c12c673">&#9670;&nbsp;</a></span>J1939_TP_TX_Message()</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> J1939_TP_TX_Message </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a>&#160;</td>
+          <td class="paramname"><em>PGN</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td>
+          <td class="paramname"><em>SA</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> *&#160;</td>
+          <td class="paramname"><em>data</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab59bf9a6c5847f2aa31e4b984020da08">j1939_uint16_t</a>&#160;</td>
+          <td class="paramname"><em>data_num</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67b">CAN_NODE</a>&#160;</td>
+          <td class="paramname"><em>_Can_Node</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>这是一个非阻塞io接口 </p>
+<dl class="params"><dt>参数</dt><dd>
+  <table class="params">
+    <tr><td class="paramdir">[in]</td><td class="paramname">PGN</td><td>TP会话的参数群编号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">SA</td><td>TP会话的目标地址 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">*data</td><td>TP会话的数据缓存地址 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">data_num</td><td>TP会话的数据大小 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">_Can_Node</td><td>长数据发送要使用的CAN硬件编号 </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>返回</dt><dd>RC_SUCCESS 成功打开TP链接，开始进入发送流程 </dd>
+<dd>
+RC_CANNOTTRANSMIT 不能发送，因为TP协议已经建立虚拟链接，并且未断开 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>TP协议的发送函数 </dd></dl>
+
+</div>
+</div>
 </div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
+    <li class="navelem"><a class="el" href="_j1939_8h.html">J1939.h</a></li>
     <li class="footer">生成于 2017年 十二月 1日 星期五 09:27:31 , 为 J1939Socket使用 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
