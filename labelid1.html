@@ -86,24 +86,26 @@ $(document).ready(function(){initNavTree('labelid1.html','');});
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="anchor" id="autotoc_md0"></a>
-接口函数概要表</h1>
+API 函数概要表</h1>
 <table class="doxtable">
 <tr>
 <th align="center">函数名</th><th align="center">函数描述  </th></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_a1634bbde52e0474441f60598fa194e7d.html#a1634bbde52e0474441f60598fa194e7d">J1939_Initialization()</a></td><td align="center">初始化一些全局变量，并向总线声明地址（默认地址） </td></tr>
+<td align="center"><a class="el" href="_j1939_8h_a1634bbde52e0474441f60598fa194e7d.html#a1634bbde52e0474441f60598fa194e7d">J1939_Initialization()</a></td><td align="center">初始化J1939协议栈，并向总线声明地址 </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_ac4849b368e4286a1154f4eaadef215b2.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll()</a></td><td align="center">系统心跳函数，需要不断的被调用，完成J1939协议栈的所有响应 </td></tr>
+<td align="center"><a class="el" href="_j1939_8h_ac4849b368e4286a1154f4eaadef215b2.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll()</a></td><td align="center">系统心跳函数，完成J1939协议栈的所有运行逻辑 </td></tr>
 <tr>
-<td align="center">J1939_ISR()</td><td align="center">CAN中断（发送和接受，can错误）函数入口 </td></tr>
+<td align="center"><a class="el" href="_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage()</a></td><td align="center">读取单帧消息，有消息，返回 RC_SUCCESS （非阻塞I/0接口） </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage()</a></td><td align="center">读取消息，从接受列队中复制接收消息到传入的内存中（*MsgPtr） </td></tr>
+<td align="center"><a class="el" href="_j1939_8h_ac593e3a3951a73cc41fc5a8391a0e061.html#ac593e3a3951a73cc41fc5a8391a0e061">J1939_EnqueueMessage()</a></td><td align="center">发送单帧消息，发送成功，返回 RC_SUCCESS（非阻塞I/0接口） </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_ac593e3a3951a73cc41fc5a8391a0e061.html#ac593e3a3951a73cc41fc5a8391a0e061">J1939_EnqueueMessage()</a></td><td align="center">发送消息，将传入的消息（*MsgPtr），复制到发送列队中 </td></tr>
+<td align="center"><a class="el" href="_j1939_8h_a485a992689e86ad9b86c49378c12c673.html#a485a992689e86ad9b86c49378c12c673" title="这是一个非阻塞io接口 ">J1939_TP_TX_Message()</a></td><td align="center">发送字节数大于8字节的数据，又称（多组，多帧，长帧）的TP发送，发送成功，返回 RC_SUCCESS（非阻塞I/0接口） </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_a485a992689e86ad9b86c49378c12c673.html#a485a992689e86ad9b86c49378c12c673" title="这是一个非阻塞io接口 ">J1939_TP_TX_Message()</a></td><td align="center">当我们需要发送字节数大于8字节的数据，调用这个函数启用TP协议将数据发送出去 </td></tr>
+<td align="center"><a class="el" href="_j1939_8h_ad861ff483284f4047185d6c6b6db871c.html#ad861ff483284f4047185d6c6b6db871c">J1939_TP_RX_Message()</a></td><td align="center">读取 （多组，多帧，长帧）的数据，有消息，返回 RC_SUCCESS （非阻塞I/0接口） </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_ad861ff483284f4047185d6c6b6db871c.html#ad861ff483284f4047185d6c6b6db871c">J1939_TP_RX_Message()</a></td><td align="center">读取已经接收的TP协议的数据，并将数据存入data缓存 </td></tr>
+<td align="center">J1939_Request_PGN()</td><td align="center">向总线请求获取一个PGN，如果PGN被其他ECU支持，将有相应的响应和PGN消息被发到总线上 </td></tr>
+<tr>
+<td align="center">J1939_Create_Response()</td><td align="center">创建一个PGN响应，如果收到一个PGN请求，则发送相应的响应和PGN。在总线上 </td></tr>
 </table>
 <hr/>
 <h1><a class="anchor" id="autotoc_md2"></a>
@@ -121,12 +123,13 @@ J1939_Initialization()</h1>
 <li>最佳使用 demo </li>
 </ul>
 </blockquote>
-<div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    <span class="comment">//初始化can驱动</span></div><div class="line">    init_can();</div><div class="line">    <span class="comment">//初始化J1939协议栈</span></div><div class="line">    <a class="code" href="_j1939_8h_a1634bbde52e0474441f60598fa194e7d.html#a1634bbde52e0474441f60598fa194e7d">J1939_Initialization</a>( TRUE );</div><div class="line">    <span class="comment">//等待地址超时</span></div><div class="line">    <span class="keywordflow">while</span> (J1939_Flags.WaitingForAddressClaimContention)</div><div class="line">        <a class="code" href="_j1939_8h_ac4849b368e4286a1154f4eaadef215b2.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll</a>(5);</div><div class="line">    <span class="comment">//运行到这里，说明地址已经声明好在系统总线上（设备已挂载到总线上）</span></div><div class="line">    <span class="keywordflow">while</span>(1)</div><div class="line">    {</div><div class="line">        ;</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><hr/>
+<div class="fragment"><div class="line"><span class="keywordtype">int</span> main()</div><div class="line">{</div><div class="line">    <span class="comment">//初始化can驱动</span></div><div class="line">    init_can();</div><div class="line">    <span class="comment">//初始化J1939协议栈</span></div><div class="line">    <a class="code" href="_j1939_8h_a1634bbde52e0474441f60598fa194e7d.html#a1634bbde52e0474441f60598fa194e7d">J1939_Initialization</a>( TRUE );</div><div class="line">    <span class="comment">//等待地址超时</span></div><div class="line">    <span class="keywordflow">while</span> (J1939_Flags.WaitingForAddressClaimContention)</div><div class="line">        <a class="code" href="_j1939_8h_ac4849b368e4286a1154f4eaadef215b2.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll</a>(5);</div><div class="line">    <span class="comment">//运行到这里，说明地址声明没有问题（设备已挂载到总线上）</span></div><div class="line">    <span class="keywordflow">while</span>(1)</div><div class="line">    {</div><div class="line">        ;</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --><hr/>
 <h1><a class="anchor" id="autotoc_md4"></a>
 J1939_Poll()</h1>
 <blockquote class="doxtable">
 <ol type="1">
 <li>调用此函数前，需要先初始化J1939协议栈</li>
+<li>此函数需要不断被调用，最好定时调用（J1939协议栈中断模式除外）</li>
 <li>此函数全局只能被串行调用，不论是单片机前后设计模式，还是嵌入式操作系统设计模式。（串行调用是指，不能在J1939_Poll 代码段中产生本J1939_Poll代码段程序嵌套），建议全局设计一个j1939_poll()函数调用入口。</li>
 <li>此函数默认处理4路CAN硬件，如果你的芯片只支持2路或更少，只需移植一路或多路。 </li>
 </ol>
@@ -194,7 +197,7 @@ J1939_DequeueMessage()</h1>
 <li>一次性处理几路CAN硬件 </li>
 </ul>
 </blockquote>
-<div class="fragment"><div class="line"><span class="keywordtype">void</span> readMsg( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">    <a class="code" href="union_j1939___m_e_s_s_a_g_e___u_n_i_o_n.html">J1939_MESSAGE</a> _msg[2];</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span>(<a class="code" href="_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage</a>( _msg, <a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baa7dea1c850a0e3f15d01b1209805b79a">Select_CAN_NODE_1</a>) == RC_SUCCESS) </div><div class="line">    {</div><div class="line">        <span class="comment">/***********处理接受数据*************/</span></div><div class="line">        ;</div><div class="line">    }</div><div class="line">    <span class="keywordflow">if</span>(<a class="code" href="_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage</a>( (_msg+1), <a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>) == RC_SUCCESS) </div><div class="line">    {</div><div class="line">        <span class="comment">/***********处理接受数据*************/</span></div><div class="line">        ;</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --> <hr/>
+<div class="fragment"><div class="line"><span class="keywordtype">void</span> readMsg( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">    <a class="code" href="union_j1939___m_e_s_s_a_g_e___u_n_i_o_n.html">J1939_MESSAGE</a> _msg[2];</div><div class="line"></div><div class="line">    <span class="keywordflow">if</span>(<a class="code" href="_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage</a>( _msg, <a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baa7dea1c850a0e3f15d01b1209805b79a">Select_CAN_NODE_1</a>) == RC_SUCCESS) </div><div class="line">    {</div><div class="line">        <span class="comment">/***********处理接受PUD1格式数据*************/</span></div><div class="line">        <span class="keywordflow">if</span>(_msg.<a class="code" href="union_j1939___m_e_s_s_a_g_e___u_n_i_o_n.html#a19ca4a91edcc8b6fa4a8fac99a4a3399">Mxe</a>.PGN == 0x000100)</div><div class="line">        {</div><div class="line">            ;<span class="comment">//你的代码</span></div><div class="line">        }</div><div class="line"></div><div class="line">    }</div><div class="line">    <span class="keywordflow">if</span>(<a class="code" href="_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage</a>( (_msg+1), <a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>) == RC_SUCCESS) </div><div class="line">    {</div><div class="line">        <span class="comment">/***********处理接受PDU2格式数据*************/</span></div><div class="line">        <span class="keywordflow">if</span>(_msg.<a class="code" href="union_j1939___m_e_s_s_a_g_e___u_n_i_o_n.html#a19ca4a91edcc8b6fa4a8fac99a4a3399">Mxe</a>.PGN == 0x00F101)</div><div class="line">        {</div><div class="line">            ;<span class="comment">//你的代码</span></div><div class="line">        }</div><div class="line">    }</div><div class="line">}</div></div><!-- fragment --> <hr/>
 <h1><a class="anchor" id="autotoc_md10"></a>
 J1939_TP_TX_Message()</h1>
 <blockquote class="doxtable">
@@ -223,12 +226,44 @@ J1939_TP_RX_Message()</h1>
 </ul>
 </blockquote>
 <div class="fragment"><div class="line"><span class="keywordtype">void</span> TP_RX_Msg( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">    <a class="code" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> _data[100] = {1,2,3,4,5,6,7,8,9,0,1,2,3,4,5,6,7};</div><div class="line"></div><div class="line">    <span class="keywordflow">while</span>(RC_SUCCESS != <a class="code" href="_j1939_8h_ad861ff483284f4047185d6c6b6db871c.html#ad861ff483284f4047185d6c6b6db871c">J1939_TP_RX_Message</a>((<a class="code" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a>*)_data,<span class="keyword">sizeof</span>(_data),<a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>));</div><div class="line">}</div></div><!-- fragment --><hr/>
+ <h1><a class="anchor" id="autotoc_md14"></a>
+J1939_Request_PGN()</h1>
+<blockquote class="doxtable">
+<ol type="1">
+<li>调用此函数前，需要先初始化J1939协议栈，J1939_Initialization()和 <a class="el" href="_j1939_8h_ac4849b368e4286a1154f4eaadef215b2.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll()</a>正确的被调用</li>
+<li>需要了解J1939-21,16~18页的请求与响应</li>
+<li>向总线请求获去一个PGN，PGN可以是单帧的，也可以是多帧的。 本函数只发送PGN请求，不处理ACK和NACK等响应消息，和被请求的PGN消息，可以调用J1939_DequeueMessage() 和 <a class="el" href="_j1939_8h_ad861ff483284f4047185d6c6b6db871c.html#ad861ff483284f4047185d6c6b6db871c">J1939_TP_RX_Message()</a>读取数据后，自行处理或不处理。 4.每调用J1939_Request_PGN()一次，可能会收到ACK和NACK等消息，和被请求的PGN消息。情况相当复杂，设计多帧与单帧，PDU1与PDU2等的关系。具体情况1939-21,17页，表4有描述。 </li>
+</ol>
+</blockquote>
+<blockquote class="doxtable">
+<ul>
+<li>最佳推荐调用方式 </li>
+</ul>
+</blockquote>
+<div class="fragment"><div class="line"><span class="comment">/*向特定地址请求PGN，PGN可以是多帧和单帧的*/</span></div><div class="line"><span class="comment">/*点对点请求*/</span></div><div class="line"><span class="keywordtype">void</span> my_Request_PGN( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">    <span class="comment">/*请求一个PDU1格式的PGN*/</span></div><div class="line">    J1939_Request_PGN(0x000100,56,<a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>);</div><div class="line">    <span class="comment">/*请求一个PDU2格式的PGN*/</span></div><div class="line">    J1939_Request_PGN(0x00F101,56,<a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>);</div><div class="line">}</div><div class="line"><span class="comment">/*广播请求PGN，PGN可以是多帧和单帧的*/</span></div><div class="line"><span class="comment">/*点对多请求，可能收到来自不同ECU数据，如果多个ECU对同一个PGN支持*/</span></div><div class="line"><span class="keywordtype">void</span> my_Request_PGN( <span class="keywordtype">void</span> )</div><div class="line">{</div><div class="line">    <span class="comment">/*请求一个PDU1格式的PGN*/</span></div><div class="line">    J1939_Request_PGN(0x000100,J1939_GLOBAL_ADDRESS,<a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>);</div><div class="line">    <span class="comment">/*请求一个PDU2格式的PGN*/</span></div><div class="line">    J1939_Request_PGN(0x00F101,J1939_GLOBAL_ADDRESS,<a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>);</div><div class="line">}</div></div><!-- fragment --><hr/>
+<h1><a class="anchor" id="autotoc_md16"></a>
+J1939_Create_Response()</h1>
+<blockquote class="doxtable">
+<ol type="1">
+<li>调用此函数前，需要先初始化J1939协议栈，J1939_Initialization()和 <a class="el" href="_j1939_8h_ac4849b368e4286a1154f4eaadef215b2.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll()</a>正确的被调用</li>
+<li>需要了解J1939-21,16~18页的请求与响应</li>
+<li>同一个PGN响应，只需要创建一次，多次被创建，协议栈会以第一次为主。</li>
+<li>注意：J1939_Create_Response（）需要传入一个数据指针，和相应的数据更新函数，</li>
+<li>如果你不需要数据更新函数，你可以带入参数 J1939_NULL </li>
+</ol>
+</blockquote>
+<blockquote class="doxtable">
+<ul>
+<li>最佳推荐调用方式 </li>
+</ul>
+</blockquote>
+<div class="fragment"><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ResponseTestData[8];</div><div class="line"><span class="keywordtype">unsigned</span> <span class="keywordtype">char</span> ResponseTestTPData[17];</div><div class="line"></div><div class="line"></div><div class="line"><span class="comment">/*用来更新数据的函数， PGN响应功能被请求消息触发时，都会提前调用本函数，然后发送 ACK和NACK等消息，和被请求的PGN消息。*/</span></div><div class="line"><span class="comment">/*此函数不宜写的太复杂，浪费CPU资源*/</span></div><div class="line"><span class="keywordtype">void</span> ResponseTestUpdata()</div><div class="line">{</div><div class="line">    ResponseTestData[0] = (BatInfo.Voltage &amp; 0x00FF);<span class="comment">//BatInfo.Voltage是一个全局变量，用作记录采集的电压</span></div><div class="line">    ResponseTestData[0] = (BatInfo.Voltage &gt;&gt; 8) &amp; 0x00FF;</div><div class="line">}</div><div class="line"></div><div class="line"></div><div class="line"><span class="keywordtype">void</span> ResponseTest()</div><div class="line">{</div><div class="line">    <span class="comment">/*响应是单帧还是多帧，接口通过代入的数据长度识别，PDU1还是PDU2,通过PGN识别*/</span></div><div class="line">    <span class="comment">/*创建一个单帧PGN的响应*/</span></div><div class="line">    J1939_Create_Response(ResponseTestData,8,0x000200,ResponseTestUpdata,<a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>);</div><div class="line">    <span class="comment">/*创建一个多帧PGN的响应*/</span></div><div class="line">    J1939_Create_Response(ResponseTestTPData,17,0x00FE33,J1939_NULL,<a class="code" href="_j1939_8h_afa47c62b47948afd20d3bf018a4fa67b.html#afa47c62b47948afd20d3bf018a4fa67baae1511c6e2916d45af460e1a43d18a80">Select_CAN_NODE_2</a>);</div><div class="line">}</div></div><!-- fragment --> <hr/>
  </div></div><!-- contents -->
 </div><!-- doc-content -->
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">生成于 2017年 十二月 1日 星期五 09:30:17 , 为 J1939Socket使用 
+    <li class="footer">生成于 2017年 十二月 1日 星期五 11:33:26 , 为 J1939Socket使用 
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>
