@@ -27,7 +27,7 @@ var indexSectionNames =
 var indexSectionLabels =
 {
   0: "全部",
-  1: "结构体",
+  1: "类",
   2: "文件",
   3: "函数",
   4: "变量",

@@ -29,7 +29,7 @@
  <tr style="height: 56px;">
   <td id="projectalign" style="padding-left: 0.5em;">
    <div id="projectname">J1939Socket
-   &#160;<span id="projectnumber">Version 2.00</span>
+   &#160;<span id="projectnumber">2.0.0</span>
    </div>
    <div id="projectbrief">基于SAE J1939协议，开源可移植的J1939驱动</div>
   </td>
@@ -85,8 +85,7 @@ $(document).ready(function(){initNavTree('labelid2.html','');});
 <div class="title">J1939协议栈框架 </div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="textblock"><h1><a class="anchor" id="autotoc_md14"></a>
-文件组成概述</h1>
+<div class="textblock"><h1>文件组成概述</h1>
 <table class="doxtable">
 <tr>
 <th align="center">文件名</th><th align="center">功能</th><th align="center">备注  </th></tr>
@@ -97,32 +96,30 @@ $(document).ready(function(){initNavTree('labelid2.html','');});
 <tr>
 <td align="center">j1939_Config.h</td><td align="center">协议配置移植文件</td><td align="center">移植J1939，唯一改动文件 </td></tr>
 </table>
-<h1><a class="anchor" id="autotoc_md15"></a>
-功能拓扑图</h1>
+<h1>功能拓扑图</h1>
 <div class="image">
 <img src="./%E5%8A%9F%E8%83%BD%E6%8B%93%E6%89%91%E5%9B%BE.png" alt="enter description here" title="功能拓扑图.png"/>
 </div>
-<h1><a class="anchor" id="autotoc_md16"></a>
-函数组成结构</h1>
+<h1>函数组成结构</h1>
 <p><b>函数大概分为4类：</b></p>
 <p>1.API 函数接口，J1939协议栈提供给用户应用编程接口，函数如下：</p>
 <table class="doxtable">
 <tr>
 <th align="center">文件名</th><th align="center">类型</th><th align="center">备注</th><th align="center">文件位置  </th></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_a1634bbde52e0474441f60598fa194e7d.html#a1634bbde52e0474441f60598fa194e7d">J1939_Initialization()</a> </td><td align="center">API</td><td align="center">J1939初始化</td><td align="center">J1939.c </td></tr>
+<td align="center"><a class="el" href="_j1939_8h.html#a1634bbde52e0474441f60598fa194e7d">J1939_Initialization()</a> </td><td align="center">API</td><td align="center">J1939初始化</td><td align="center">J1939.c </td></tr>
 <tr>
 <td align="center">J1939_ISR() </td><td align="center">API</td><td align="center">中断响应入口（中断模式）</td><td align="center">J1939.c </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_ac4849b368e4286a1154f4eaadef215b2.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll()</a></td><td align="center">API</td><td align="center">协议栈心跳函数入口（轮询模式）</td><td align="center">J1939.c </td></tr>
+<td align="center"><a class="el" href="_j1939_8h.html#ac4849b368e4286a1154f4eaadef215b2">J1939_Poll()</a></td><td align="center">API</td><td align="center">协议栈心跳函数入口（轮询模式）</td><td align="center">J1939.c </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage()</a> </td><td align="center">API</td><td align="center">数据出队（TX）</td><td align="center">J1939.c </td></tr>
+<td align="center"><a class="el" href="_j1939_8h.html#a2bb9111daa06c5f3975b2f5a3b586527">J1939_DequeueMessage()</a> </td><td align="center">API</td><td align="center">数据出队（TX）</td><td align="center">J1939.c </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_ac593e3a3951a73cc41fc5a8391a0e061.html#ac593e3a3951a73cc41fc5a8391a0e061">J1939_EnqueueMessage()</a> </td><td align="center">API</td><td align="center">数据入队（RX）</td><td align="center">J1939.c </td></tr>
+<td align="center"><a class="el" href="_j1939_8h.html#ac593e3a3951a73cc41fc5a8391a0e061">J1939_EnqueueMessage()</a> </td><td align="center">API</td><td align="center">数据入队（RX）</td><td align="center">J1939.c </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_a6e74b7d1cee40c90f381c8e847461dcf.html#a6e74b7d1cee40c90f381c8e847461dcf" title="这是一个非阻塞io接口 ">J1939_TP_TX_Message()</a> </td><td align="center">API</td><td align="center">长帧数据发送（大于8字节）</td><td align="center">J1939.c </td></tr>
+<td align="center"><a class="el" href="_j1939_8h.html#a485a992689e86ad9b86c49378c12c673">J1939_TP_TX_Message()</a> </td><td align="center">API</td><td align="center">长帧数据发送（大于8字节）</td><td align="center">J1939.c </td></tr>
 <tr>
-<td align="center"><a class="el" href="_j1939_8h_ad861ff483284f4047185d6c6b6db871c.html#ad861ff483284f4047185d6c6b6db871c">J1939_TP_RX_Message()</a></td><td align="center">API</td><td align="center">长帧数据接收（大于8字节）</td><td align="center">J1939.c </td></tr>
+<td align="center"><a class="el" href="_j1939_8h.html#ad861ff483284f4047185d6c6b6db871c">J1939_TP_RX_Message()</a></td><td align="center">API</td><td align="center">长帧数据接收（大于8字节）</td><td align="center">J1939.c </td></tr>
 </table>
 <blockquote class="doxtable">
 <p>备注：轮询模式 和 中断模式 二选其一，在配置文件中。 </p>
@@ -208,7 +205,7 @@ $(document).ready(function(){initNavTree('labelid2.html','');});
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="footer">生成于 2017年 十一月 27日 星期一 16:18:08 , 为 J1939Socket使用 
+    <li class="footer">制作者
     <a href="http://www.doxygen.org/index.html">
     <img class="footer" src="doxygen.png" alt="doxygen"/></a> 1.8.13 </li>
   </ul>
