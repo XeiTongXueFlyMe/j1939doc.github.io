@@ -3,7 +3,7 @@ var NAVTREE =
   [ "J1939Socket", "index.html", [
     [ "历史版本变更", "index.html", [
       [ "J1939Socket API Version 2", "index.html#autotoc_md21", null ],
-      [ "J1939Socket API Version 1", "index.html#autotoc_md22", null ]
+      [ "J1939Socket API Version 1 (本文档不对Version 1 进行阐述)", "index.html#autotoc_md22", null ]
     ] ],
     [ "J1939Socket API", "labelid1.html", [
       [ "API 函数概要表", "labelid1.html#autotoc_md0", null ],
