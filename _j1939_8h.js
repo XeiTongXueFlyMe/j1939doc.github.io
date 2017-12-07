@@ -1,5 +1,6 @@
 var _j1939_8h =
 [
+    [ "TP_RX_MESSAGE", "struct_t_p___r_x___m_e_s_s_a_g_e.html", "struct_t_p___r_x___m_e_s_s_a_g_e" ],
     [ "J1939_MESSAGE_UNION", "union_j1939___m_e_s_s_a_g_e___u_n_i_o_n.html", "union_j1939___m_e_s_s_a_g_e___u_n_i_o_n" ],
     [ "j1939_PID", "struct_j1939___m_e_s_s_a_g_e___u_n_i_o_n_1_1j1939___p_i_d.html", "struct_j1939___m_e_s_s_a_g_e___u_n_i_o_n_1_1j1939___p_i_d" ],
     [ "j1939_uint32_t", "_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b", null ],
@@ -20,5 +21,7 @@ var _j1939_8h =
     [ "J1939_DequeueMessage", "_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html#a2bb9111daa06c5f3975b2f5a3b586527", null ],
     [ "J1939_EnqueueMessage", "_j1939_8h_ac593e3a3951a73cc41fc5a8391a0e061.html#ac593e3a3951a73cc41fc5a8391a0e061", null ],
     [ "J1939_TP_TX_Message", "_j1939_8h_a485a992689e86ad9b86c49378c12c673.html#a485a992689e86ad9b86c49378c12c673", null ],
-    [ "J1939_TP_RX_Message", "_j1939_8h_ad861ff483284f4047185d6c6b6db871c.html#ad861ff483284f4047185d6c6b6db871c", null ]
+    [ "J1939_TP_RX_Message", "_j1939_8h_ad6f901a3489250837544956c6460ae15.html#ad6f901a3489250837544956c6460ae15", null ],
+    [ "J1939_Request_PGN", "_j1939_8h_ade5a2ccfd9902b6d68f7970ab7dab849.html#ade5a2ccfd9902b6d68f7970ab7dab849", null ],
+    [ "J1939_Create_Response", "_j1939_8h_a70a740723a7139eef9dbc3f73c327cd2.html#a70a740723a7139eef9dbc3f73c327cd2", null ]
 ];

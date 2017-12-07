@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>J1939Socket: J1939_DequeueMessage</title>
+<title>J1939Socket: J1939_Request_PGN</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html','');});
+$(document).ready(function(){initNavTree('_j1939_8h_ade5a2ccfd9902b6d68f7970ab7dab849.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -81,17 +81,23 @@ $(document).ready(function(){initNavTree('_j1939_8h_a2bb9111daa06c5f3975b2f5a3b5
 </div>
 
 <div class="contents">
-<a id="a2bb9111daa06c5f3975b2f5a3b586527"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bb9111daa06c5f3975b2f5a3b586527">&#9670;&nbsp;</a></span>J1939_DequeueMessage()</h2>
+<a id="ade5a2ccfd9902b6d68f7970ab7dab849"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ade5a2ccfd9902b6d68f7970ab7dab849">&#9670;&nbsp;</a></span>J1939_Request_PGN()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_DequeueMessage </td>
+          <td class="memname">void J1939_Request_PGN </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_j1939_8h_af4dfe525cdd4255770fe17ba677ae83b.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *&#160;</td>
-          <td class="paramname"><em>MsgPtr</em>, </td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#ab2df3655d1c26081ba45d5ab9439d27b">j1939_uint32_t</a>&#160;</td>
+          <td class="paramname"><em>pgn</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a>&#160;</td>
+          <td class="paramname"><em>DA</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -108,17 +114,13 @@ $(document).ready(function(){initNavTree('_j1939_8h_a2bb9111daa06c5f3975b2f5a3b5
 </div><div class="memdoc">
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">MsgPtr</td><td>用户要出队的消息 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">_Can_Node</td><td>要出队的CAN硬件编号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">pgn</td><td>被请求的参数群 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">DA</td><td>目标地址（DestinationAddress） 当DA = 0xff表示是全局请求 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">_Can_Node</td><td>要入队的CAN硬件编号（要选择的使用的CAN硬件编号） </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>RC_SUCCESS 消息列中移除成功 </dd>
-<dd>
-RC_QUEUEEMPTY 没有消息返回 </dd>
-<dd>
-RC_CANNOTRECEIVE 目前系统没有接受到消息，应为不能在网络中申请到地址 </dd></dl>
-<dl class="section note"><dt>注解</dt><dd>从接受队列中读取一个信息到*MsgPtr。如果我们用的是中断，需要将中断失能，在获取接受队列数据时 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>请求（从全局范围或则特定目的地的）参数群，请求规则J1939-21的16-17页，有明确的说明 </dd></dl>
 
 </div>
 </div>

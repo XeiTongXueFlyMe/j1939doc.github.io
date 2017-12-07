@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>J1939Socket: J1939_DequeueMessage</title>
+<title>J1939Socket: J1939_TP_RX_Message</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -63,7 +63,7 @@ $(function() {
   </div>
 </div>
 <script type="text/javascript">
-$(document).ready(function(){initNavTree('_j1939_8h_a2bb9111daa06c5f3975b2f5a3b586527.html','');});
+$(document).ready(function(){initNavTree('_j1939_8h_ad6f901a3489250837544956c6460ae15.html','');});
 </script>
 <div id="doc-content">
 <!-- window showing the filter options -->
@@ -81,17 +81,17 @@ $(document).ready(function(){initNavTree('_j1939_8h_a2bb9111daa06c5f3975b2f5a3b5
 </div>
 
 <div class="contents">
-<a id="a2bb9111daa06c5f3975b2f5a3b586527"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2bb9111daa06c5f3975b2f5a3b586527">&#9670;&nbsp;</a></span>J1939_DequeueMessage()</h2>
+<a id="ad6f901a3489250837544956c6460ae15"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6f901a3489250837544956c6460ae15">&#9670;&nbsp;</a></span>J1939_TP_RX_Message()</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="_j1939_8h.html#abed4986035b5138ce5c8306d2653fe01">j1939_uint8_t</a> J1939_DequeueMessage </td>
+          <td class="memname"><a class="el" href="_j1939_8h.html#a9e9f4a9bd6c4a189e06fa67d441d65f7">j1939_int8_t</a> J1939_TP_RX_Message </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="_j1939_8h_af4dfe525cdd4255770fe17ba677ae83b.html#af4dfe525cdd4255770fe17ba677ae83b">J1939_MESSAGE</a> *&#160;</td>
-          <td class="paramname"><em>MsgPtr</em>, </td>
+          <td class="paramtype"><a class="el" href="struct_t_p___r_x___m_e_s_s_a_g_e.html">TP_RX_MESSAGE</a> *&#160;</td>
+          <td class="paramname"><em>msg</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -108,17 +108,20 @@ $(document).ready(function(){initNavTree('_j1939_8h_a2bb9111daa06c5f3975b2f5a3b5
 </div><div class="memdoc">
 <dl class="params"><dt>参数</dt><dd>
   <table class="params">
-    <tr><td class="paramdir">[in]</td><td class="paramname">MsgPtr</td><td>用户要出队的消息 </td></tr>
-    <tr><td class="paramdir">[in]</td><td class="paramname">_Can_Node</td><td>要出队的CAN硬件编号 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg.data</td><td>读取数据的缓存 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">msg.data_num</td><td>读取数据的缓存大小 </td></tr>
+    <tr><td class="paramdir">[in]</td><td class="paramname">_Can_Node</td><td>要入队的CAN硬件编号（要选择的使用的CAN硬件编号） </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">msg.SA</td><td>数据源地址 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">msg.byte_count</td><td>数据大小 </td></tr>
+    <tr><td class="paramdir">[out]</td><td class="paramname">msg.PGN</td><td>数据参数群编号 </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>返回</dt><dd>RC_SUCCESS 消息列中移除成功 </dd>
+<dl class="section return"><dt>返回</dt><dd>RC_CANNOTRECEIVE 不能接受，TP协议正在接受数据中 </dd>
 <dd>
-RC_QUEUEEMPTY 没有消息返回 </dd>
-<dd>
-RC_CANNOTRECEIVE 目前系统没有接受到消息，应为不能在网络中申请到地址 </dd></dl>
-<dl class="section note"><dt>注解</dt><dd>从接受队列中读取一个信息到*MsgPtr。如果我们用的是中断，需要将中断失能，在获取接受队列数据时 </dd></dl>
+RC_SUCCESS 读取数据成功 </dd></dl>
+<dl class="section note"><dt>注解</dt><dd>TP的接受函数 , 接受缓存的大小必须大于接受数据的大小，建议初始化缓存大小用 J1939_TP_MAX_MESSAGE_LENGTH<br />
+ 请正确带入 缓存区的大小，参数错误程序运行有风险 </dd></dl>
 
 </div>
 </div>
